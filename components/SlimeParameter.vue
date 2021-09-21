@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <h3>{{ context.type }}({{ context.level }})</h3>
+  <div class="status">
+    <p class="label">{{ context.type }}(特訓レベル: {{ context.level }})</p>
     <p>{{ context.value }}</p>
+    <button @click="onLevelUpRequest()">
+      特訓レベルUP ({{ context.level ** 2 }})
+    </button>
   </div>
 </template>
 
@@ -28,6 +31,24 @@ export default Vue.extend({
         }
       }
     }
+  },
+  methods: {
+    onLevelUpRequest () {
+      console.log('X')
+      this.$emit('onLevelUpRequest')
+    }
   }
 })
 </script>
+
+<style scoped>
+  .status {
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .label {
+    margin: 0;
+    font-size: 10px
+  }
+</style>
