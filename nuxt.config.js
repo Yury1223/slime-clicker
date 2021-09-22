@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'slime-growth-app',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -25,6 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/delimiter-filter.ts'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
